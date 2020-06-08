@@ -1,29 +1,68 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
-    <title>Quentin Drumez</title>
-    <meta name="description" content="" />
-    <meta name="author" content="Quentin Drumez" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./styles/commons.css" />
-    <link rel="stylesheet" href="./styles/typographies.css" />
-    <link rel="stylesheet" href="./styles/landing.css" />
-    <link rel="shortcut icon" href="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root">
-      <section id="landing">
-        <div class="content-container">
-          <h1>Quentin Drumez</h1>
-          <h2>Lead Développeur - Full Stack JS</h2>
-        </div>
-      </section>
+---
+title: Quentin Drumez - Freelance
+layout: default
+bodyClass: page-home
+---
+
+<div class="intro pb-4">
+  <div class="container">
+    <h1>Quentin Drumez</h1>
+    <p>Donnez toutes vos chances à votre projet web ou mobile, travaillez avec moi !</p>
+  </div>
+</div>
+
+<div class="container pt-2">
+  <div class="call">
+    <div class="call-box-top">
+      <div class="call-phone"><strong>Téléphone: </strong> {{ site.data.contact.phone }} </div>
+      <div class="call-email"><strong>Email: </strong>
+        <a href="mailto:{{ site.data.contact.email }}">
+          {{ site.data.contact.email }}
+        </a>
+      </div>
     </div>
-  </body>
-</html>
+    <div class="call-box-bottom">
+      <a href="{{site.baseurl}}/contact" class="button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-8 pt-md-20">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="title-3 text-dark mb-3">Our Services</h2>
+    </div>
+    {% for service in site.services %}
+    <div class="col-12 col-md-4 mb-1">
+      <div class="service service-summary">
+        <div class="service-content">
+          <h2 class="service-title">
+            <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
+          </h2>
+          {{ service.content | markdownify | strip_html | truncate: 100 }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="col-12 text-center">
+      <a class="button button-primary mt-2" href="{{site.baseurl}}/services">View All Services</a>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-5 pb-5 pt-md-20 pb-md-7">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="title-3 text-dark mb-4">Our Features</h2>
+    </div>
+    {% for feature in site.data.features %}
+    <div class="col-12 col-md-6 col-lg-4 mb-2">
+      <div class="feature">
+        {% if feature.image %}<div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image }}" /></div> {% endif %}
+        <h2 class="feature-title">{{ feature.title }}</h2>
+        <div class="feature-content">{{ feature.description }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
