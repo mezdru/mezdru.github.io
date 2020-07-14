@@ -2,11 +2,12 @@
   display: none;
   @include media-breakpoint-up(sm) {
     display: block;
-    width: 120px;
+    // width: 120px;
+    height: 40px;
   }
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
   a {
     display: block;
@@ -17,13 +18,13 @@
 
 .logo-mobile {
   display: block;
-  width: 30px;
+  height: 30px;
   @include media-breakpoint-up(sm) {
     display: none;
   }
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
   a {
     display: block;

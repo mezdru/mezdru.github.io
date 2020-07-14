@@ -1,11 +1,9 @@
 ---
-title: "Superannuation"
-image: "/services/default.png"
+title: "Gestion de projet web"
+image: "/services/noun_591323.png"
 ---
 
-Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum
-de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae
-crimen habet Priamum nec.
+Création de site vitrine statique ou dynamique avec un espace admin dédié.
 
 ## Ne verba patulosque numen vix libet
 
